@@ -1,6 +1,6 @@
 ---
-title: Welcome to Quartz
+title: 关于
 ---
 
-This is a blank Quartz installation.
-See the [documentation](https://quartz.jzhao.xyz) for how to get started.
+欢迎来到森之月。
+这里存放了人设。
