@@ -34,9 +34,15 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
 
       // Display word count if enabled
       if (options.showWordCount) {
-        const wordCount = text.split(/\s+/).length
+        // 英文单词统计：匹配字母、数字、下划线组成的单词
+        const englishWordCount = text.match(/\b\w+\b/g)?.length || 0
+        // 中文字符统计：匹配中文字符
+        const chineseCharCount = text.match(/[\u4e00-\u9fff]/g)?.length || 0
+        // 总字数
+        const totalWordCount = englishWordCount + chineseCharCount
+
         const displayedWordCount = i18n(cfg.locale).components.contentMeta.readingTime({
-          minutes: wordCount, // 传递字数作为参数
+          minutes: totalWordCount, // 传递字数作为参数
         })
         segments.push(displayedWordCount)
       }
