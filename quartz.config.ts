@@ -22,8 +22,8 @@ const config: QuartzConfig = {
       fontOrigin: "googleFonts",
       cdnCaching: true,
       typography: {
-        header: "Schibsted Grotesk",
-        body: "yili",
+        header: "ZCOOL KuaiLe",
+        body: "Noto Serif SC",
         code: "IBM Plex Mono",
       },
       colors: {
