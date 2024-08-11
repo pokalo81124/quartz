@@ -8,7 +8,7 @@ export const sharedPageComponents: SharedLayout = {
   afterBody: [],
   footer: Component.Footer({
     links: {
-      天堂错误文件: "https://naturaleki.one/",
+      "©天堂错误文件": "https://naturaleki.one/",
     },
   }),
 }
