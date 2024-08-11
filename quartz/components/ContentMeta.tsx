@@ -1,6 +1,5 @@
 import { formatDate, getDate } from "./Date"
 import { QuartzComponentConstructor, QuartzComponentProps } from "./types"
-import readingTime from "reading-time"
 import { classNames } from "../util/lang"
 import { i18n } from "../i18n"
 import { JSX } from "preact"
@@ -8,14 +7,14 @@ import style from "./styles/contentMeta.scss"
 
 interface ContentMetaOptions {
   /**
-   * Whether to display reading time
+   * Whether to display word count
    */
-  showReadingTime: boolean
+  showWordCount: boolean
   showComma: boolean
 }
 
 const defaultOptions: ContentMetaOptions = {
-  showReadingTime: true,
+  showWordCount: true,
   showComma: true,
 }
 
@@ -33,13 +32,13 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
         segments.push(formatDate(getDate(cfg, fileData)!, cfg.locale))
       }
 
-      // Display reading time if enabled
-      if (options.showReadingTime) {
-        const { minutes, words: _words } = readingTime(text)
-        const displayedTime = i18n(cfg.locale).components.contentMeta.readingTime({
-          minutes: Math.ceil(minutes),
+      // Display word count if enabled
+      if (options.showWordCount) {
+        const wordCount = text.split(/\s+/).length
+        const displayedWordCount = i18n(cfg.locale).components.contentMeta.readingTime({
+          minutes: wordCount, // 传递字数作为参数
         })
-        segments.push(displayedTime)
+        segments.push(displayedWordCount)
       }
 
       const segmentsElements = segments.map((segment) => <span>{segment}</span>)
