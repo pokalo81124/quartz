@@ -39,8 +39,8 @@ export default {
       title: "关系图谱",
     },
     recentNotes: {
-      title: "最近的笔记",
-      seeRemainingMore: ({ remaining }) => `查看更多${remaining}篇笔记 →`,
+      title: "最近的文件",
+      seeRemainingMore: ({ remaining }) => `查看更多${remaining}份文件 →`,
     },
     transcludes: {
       transcludeOf: ({ targetSlug }) => `包含${targetSlug}`,
