@@ -23,7 +23,7 @@ export default {
     },
     backlinks: {
       title: "反向链接",
-      noBacklinksFound: "无法找到反向链接",
+      noBacklinksFound: "无",
     },
     themeToggle: {
       lightMode: "亮色模式",
