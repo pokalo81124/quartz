@@ -48,7 +48,7 @@ export default {
     },
     search: {
       title: "搜索",
-      searchBarPlaceholder: "搜索些什么",
+      searchBarPlaceholder: "请输入文字",
     },
     tableOfContents: {
       title: "目录",
