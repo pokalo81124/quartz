@@ -2,6 +2,19 @@
 
 // put your custom CSS here!
 
-body {
-font-size: 16px;
+p,
+ul,
+text,
+a,
+tr,
+td,
+li,
+ol,
+ul,
+.katex,
+.math {
+  color: var(--darkgray);
+  fill: var(--darkgray);
+  hyphens: auto;
+  font-size: 16px;
 }
