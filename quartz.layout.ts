@@ -5,7 +5,9 @@ import * as Component from "./quartz/components"
 export const sharedPageComponents: SharedLayout = {
   head: Component.Head(),
   header: [],
-  afterBody: [],
+  afterBody: [
+    Component.MobileOnly(Component.Explorer()),
+  ],
   footer: Component.Footer({
     links: {
       "©天堂错误文件": "https://naturaleki.one/",
