@@ -2,7 +2,7 @@
 title: 关于
 enableContentMeta: "false"
 ---
-欢迎来到数学研究小组wiki！
+欢迎来到数学研究小组wiki！这个站点目前还在长期施工中。
 
 [[目录：世界观]]可以查看故事背景。
 

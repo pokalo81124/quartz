@@ -11,7 +11,7 @@ interface ContentMetaOptions {
    */
   showWordCount: boolean
   showComma: boolean
-  showByDefault: boolean // 新增默认选项，控制组件是否显示
+  showByDefault: boolean // 控制组件是否显示的默认选项
 }
 
 const defaultOptions: ContentMetaOptions = {
@@ -25,11 +25,12 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
   const options: ContentMetaOptions = { ...defaultOptions, ...opts }
 
   function ContentMetadata({ cfg, fileData, displayClass }: QuartzComponentProps) {
-    // 新增 enableContentMeta 的判定逻辑
+    // 判断是否显示组件
     const display = fileData.frontmatter?.enableContentMeta !== undefined
       ? fileData.frontmatter.enableContentMeta
       : options.showByDefault;
 
+    // 如果 display 为 false，则不渲染组件
     if (!display) {
       return null;
     }
