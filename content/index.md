@@ -1,7 +1,6 @@
 ---
 title: 关于
 ---
-
 欢迎来到数学研究小组wiki。
 
 这里存放了人设。
@@ -11,4 +10,7 @@ title: 关于
 [[目录：人物]]存放了人设
 
 [[目录：区域]]是地区的情报
+
+![](https://img.naturaleki.one/lock/forest.jfif)
+
 
