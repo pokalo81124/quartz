@@ -1,5 +1,6 @@
 ---
 title: 关于
+enableContentMeta: "false"
 ---
 欢迎来到数学研究小组wiki！
 

@@ -11,11 +11,13 @@ interface ContentMetaOptions {
    */
   showWordCount: boolean
   showComma: boolean
+  showByDefault: boolean // 新增默认选项，控制组件是否显示
 }
 
 const defaultOptions: ContentMetaOptions = {
   showWordCount: true,
   showComma: true,
+  showByDefault: true, // 默认情况下显示组件
 }
 
 export default ((opts?: Partial<ContentMetaOptions>) => {
@@ -23,6 +25,13 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
   const options: ContentMetaOptions = { ...defaultOptions, ...opts }
 
   function ContentMetadata({ cfg, fileData, displayClass }: QuartzComponentProps) {
+    // 新增enableContentMeta的判定逻辑
+    const display = fileData.frontmatter?.enableContentMeta ?? options.showByDefault
+
+    if (!display) {
+      return null
+    }
+
     const text = fileData.text
 
     if (text) {
