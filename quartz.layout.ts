@@ -27,7 +27,13 @@ export const defaultContentPageLayout: PageLayout = {
     Component.PageTitle(),
     Component.MobileOnly(Component.Spacer()),
     Component.Search(),
-    Component.DesktopOnly(Component.Explorer()),
+    Component.DesktopOnly(Component.Explorer({
+      filterFn: (node) => {
+        // set containing names of everything you want to filter out
+        const omit = new Set(["目录"])
+        return !omit.has(node.name.toLowerCase())
+      },
+    })),
   ],
   right: [
     Component.DesktopOnly(Component.TableOfContents()),
